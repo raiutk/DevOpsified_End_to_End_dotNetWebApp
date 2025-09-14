@@ -35,7 +35,7 @@
 
 #################### Using Alpine Image for smaller size 173MB############### Start
 # Build stage
-FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
 WORKDIR /src
 
 COPY *.csproj ./
@@ -45,7 +45,7 @@ COPY . ./
 RUN dotnet publish -c Release -o /app/publish
 
 # Runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS runtime
 WORKDIR /app
 
 COPY --from=build /app/publish .
