@@ -1,0 +1,23 @@
+# This is a sample deployment manifest file for a simple web application.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resume-web-app
+  labels:
+    app: resume-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resume-web-app
+  template:
+    metadata:
+      labels:
+        app: resume-web-app
+    spec:
+      containers:
+      - name: resume-web-app
+        image: utkarsh17rai/resume-webapp:{{ .Values.image.tag }} 
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

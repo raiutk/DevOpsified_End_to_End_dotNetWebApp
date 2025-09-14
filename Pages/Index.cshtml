@@ -1,0 +1,157 @@
+@page
+@model dynamic
+
+<div class="resume-grid">
+  <aside class="sidebar">
+    <img src="/images/headshot.png" alt="Utkarsh Rai" class="avatar" />
+    <h1 class="name">Utkarsh Rai</h1>
+    <p class="title">AWS Certified DevOps Engineer</p>
+
+    <div class="contact">
+      <p>📞 +91-8707052050</p>
+      <p>✉️ <a href="mailto:u.17rai@gmail.com">u.17rai@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/utkarsh-rai-4a1b7b18b" target="_blank">linkedin.com/in/utkarsh-rai-4a1b7b18b</a></p>
+    </div>
+
+    <h3>Skills</h3>
+<ul class="skills">
+  <li><strong>DevOps Tools:</strong> Git, GitHub, Jenkins, Docker, Ansible, Terraform, Kubernetes, CI/CD pipelines, Infrastructure as Code (IaC), Cloud Automation, Cloud Computing</li>
+  <li><strong>Cloud Platforms:</strong> AWS (EC2, S3, VPC, IAM, ECS, EKS, RDS, CloudFormation, Lambda, Route 53, CloudFront, CloudWatch)</li>
+  <li><strong>Scripting & Programming:</strong> Bash, C#.NET, Python (Basic)</li>
+  <li><strong>Infrastructure as Code:</strong> Ansible, Terraform, AWS CloudFormation</li>
+  <li><strong>Monitoring & Logging:</strong> Prometheus, Grafana, AWS CloudWatch</li>
+  <li><strong>Containerization & Orchestration:</strong> Docker, Kubernetes</li>
+  <li><strong>Version Control:</strong> Git, GitHub</li>
+  <li><strong>Operating Systems:</strong> Linux (Ubuntu, CentOS), Windows</li>
+  <li><strong>Database Management:</strong> SQL Server</li>
+  <li><strong>Certifications:</strong> 
+    <a href="https://www.credly.com/badges/15f600df-5ec8-4cfd-9f73-e8d71dcdb91b/linked_in_profile" target="_blank">AWS Certified Cloud Practitioner</a>, 
+    <a href="https://www.credly.com/badges/df06ba0d-382e-4f09-b07c-42176962dfbf/linked_in_profile" target="_blank">AWS Certified Solutions Architect – Associate</a>, 
+    <a href="https://learn.microsoft.com/api/credentials/share/en-in/UtkarshRai-0223/3EB5AF4F0CE2094D?sharingId=7A2ED5898F82A779" target="_blank">Microsoft Azure Fundamental AZ-900</a>
+  </li>
+</ul>
+
+  </aside>
+
+  <section class="main">
+    <section class="card">
+      <h2>Summary</h2>
+      <p>AWS Certified DevOps Engineer with 4+ years of experience automating and managing cloud infrastructure on
+AWS using Infrastructure as Code (IaC) with Terraform. Proficient in building and maintaining CI/CD pipelines using
+Jenkins and managing containerized applications with Docker and Kubernetes. Strong foundation in .NET development and
+SQL Server, with hands-on experience supporting production-grade deployments in Agile environments. Familiar with
+monitoring and troubleshooting using CloudWatch, Prometheus, and Grafana.</p>
+    </section>
+
+    <section class="card">
+      <h2>Experience</h2>
+      <h3>Eviden (previously Atos Syntel) — Associate Consultant </h3>
+      <p><em>Jul 2021 – Current, Pune, India</em></p>
+      <ul>
+  <li>Worked in Agile methodologies, utilizing ServiceNow for tracking and managing work items, enhancing team collaboration and project visibility.</li>
+  <li>Managed and provisioned AWS cloud resources (EC2, S3, VPC, IAM, RDS), optimizing costs and ensuring efficient resource utilization.</li>
+  <li>Designed and maintained end-to-end CI/CD pipelines with AWS CodePipeline and Jenkins, reducing deployment times by ~30%.</li>
+  <li>Showcased coding skills in C#.NET, contributing to the design and implementation of mission-critical applications with optimized performance and reliability.</li>
+  <li>Created and optimized SQL Server stored procedures and queries, ensuring smooth and accurate data operations for enterprise applications.</li>
+  <li>Established robust monitoring solutions using AWS CloudWatch and Prometheus, improving incident detection and reducing response time by 15%.</li>
+  <li>Automated AWS infrastructure provisioning using Terraform, reducing manual effort by ~40%.</li>
+  <li>Led Site Reliability Engineering (SRE) initiatives, implementing SLOs, SLIs, and SLAs to achieve 99.99% system availability while managing error budgets and streamlining incident response processes.</li>
+</ul>
+
+    </section>
+
+   <section class="card projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h4>High Availability VPC Setup on AWS</h4>
+    <span class="date">Jul 2024 – Jul 2024</span>
+    <span class="tech-stack">Tech Stack: AWS VPC | EC2 | Auto Scaling | ALB | NAT Gateway | Subnets | Security Groups | Route Tables</span>
+    <ul>
+      <li>Designed a resilient VPC in AWS, deploying servers across two Availability Zones with Auto Scaling for high availability.</li>
+      <li>Implemented an Application Load Balancer for efficient traffic management and fault tolerance.</li>
+      <li>Secured the environment by placing servers in private subnets, with internet access through NAT gateways.</li>
+      <li>Ensured continuous operation by deploying NAT gateways and critical resources in multiple Availability Zones.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <h4>Database Management and Optimization</h4>
+    <span class="date">Jan 2024 – Apr 2024</span>
+    <span class="tech-stack">Tech Stack: MSSQL Server</span>
+    <ul>
+      <li>Designed and implemented SQL jobs, stored procedures, and queries to effectively manage and store new policies implemented throughout the company in 2024, ensuring accurate and efficient data handling.</li>
+      <li>Collaborated with stakeholders to understand the requirements, translate them into technical specifications, and deliver solutions that aligned with business objectives, while adhering to best practices and maintaining data integrity.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <h4>Shift Transport Planner Application</h4>
+    <span class="date">Aug 2023 – Aug 2023</span>
+    <span class="tech-stack">Tech Stack: .NET | C# | MSSQL Server</span>
+    <ul>
+      <li>Built a calendar-based tool for employees to mark specific cab usage days, replacing the old monthly Yes/No system.</li>
+      <li>Requests auto routed to manager and transport admin; fallback action handled by admin if manager skips.</li>
+      <li>Enabled transport team to generate daily reports for only valid cab requests, avoiding overbooking.</li>
+      <li>Saved 20–30% administrative effort by automating transport planning and approvals.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <h4>LastMinuteTransport Application</h4>
+    <span class="date">Oct 2022 – Oct 2022</span>
+    <span class="tech-stack">Tech Stack: .NET | C# | MSSQL Server</span>
+    <ul>
+      <li>Developed an internal tool to manage last-minute shift extension transport requests, solving the challenge of static weekly transport planning.</li>
+      <li>Allowed users to raise requests 2 hours before shift end, auto-notifying manager and transport admin for timely action.</li>
+      <li>Implemented approval workflow: the manager approves, else transport admin takes over.</li>
+      <li>Resulted in a 30–40% improvement in transport coordination efficiency during extended shifts.</li>
+    </ul>
+  </div>
+</section>
+
+
+    <section class="card">
+      <h2>Education</h2>
+      <p>Accurate Institute Of Management and Technology (AKTU) — B.Tech Computer Science (2016 - 2020)</p>
+      <p>Final grade: 7.74 / 10</p>
+    </section>
+
+    <section class="card awards">
+  <h2>Awards & Recognitions</h2>
+  <ul>
+    <li>
+      <strong>Spot Award — Eviden (May 2025)</strong>
+      <ul>
+        <li>Awarded for outstanding contributions to the ITAP cloud migration and unification project, including rapid resolution of Hypercare issues and ensuring a seamless transition.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Team Silver Award — Eviden (Mar 2024)</strong>
+      <ul>
+        <li>Recognized for exceptional contribution and involvement in organizational initiatives.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Spot Award — Eviden (Mar 2024)</strong>
+      <ul>
+        <li>Acknowledged for incredible collaboration and effort in migrating the ITAP portal from the ACN to the GCN network, ensuring a smooth transition.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Spot Award — Eviden (Jan 2024)</strong>
+      <ul>
+        <li>Recognized for rapid completion of Year-End-Process and seamless implementation of a New Leave policy within two weeks, enhancing operational efficiency and employee satisfaction.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Spot Recognition — Eviden (Jan 2023)</strong>
+      <ul>
+        <li>Recognized for exceptional support during the Syntel Year-End process and resolving ITAP portal issues. Commended for working beyond regular hours to ensure smooth operations.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+  </section>
+</div>
