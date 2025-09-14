@@ -31,3 +31,6 @@ dotnet run
 ## Docker (optional)
 A simple Dockerfile can be used — run `docker build -t resumewebapp .` and `docker run -p 8080:80 resumewebapp`.
 
+## Looks like this.
+![alt text](image.png)
+
