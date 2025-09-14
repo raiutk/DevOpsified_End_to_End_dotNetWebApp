@@ -8,7 +8,7 @@ image:
   repository: utkarsh17rai/resume-webapp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "17716023356"
+  tag: "17716318049"
 
 ingress:
   enabled: false
