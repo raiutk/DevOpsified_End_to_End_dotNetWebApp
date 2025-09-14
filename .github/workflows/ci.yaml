@@ -8,14 +8,50 @@ on:
       - 'README.md'
       - 'docs/**'
       - 'helm/**'
+      - 'README.md'
  
- jobs:
+jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'   # Change this to your version, e.g. '7.0.x' if .NET 7
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+
+  code-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install dotnet-format (for code style checks)
+      run: dotnet tool install -g dotnet-format
+
+    - name: Run code formatting check
+      run: dotnet format --verify-no-changes
+
+  push:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
@@ -24,16 +60,33 @@ on:
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
-        context: .
+        context: ./Dockerfile
         push: true
-        tags: utkarsh17rai/resumewebapp:v1
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/dotnet-web-app:${{ github.run_id }}
 
-    - name: Verify Docker image was pushed
+  update-newtag-in-helm-chart:
+    runs-on: ubuntu-latest
+    needs: push
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.TOKEN }}
+
+    - name: Update tag in Helm chart
       run: |
-        docker pull utkarsh17rai/resumewebapp:v1
-        docker images | grep utkarsh17rai/resumewebapp
+        sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' helm/resume-web-app-chart/values.yaml
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.email "u.17rai@gmail.com"
+        git config --global user.name "Utkarsh Rai"
+        git add helm/resume-web-app-chart/values.yaml
+        git commit -m "Update tag in Helm chart"
+        git push
