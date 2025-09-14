@@ -14,7 +14,7 @@ DevOps practices include the following:
 
 ## 📊 Summary Diagram
 ![alt text](image-1.png)
-*(Diagram to be updated for .NET version if needed)*
+
 
 ---
 
